@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beach Glo Tanning &amp; Spa | Kingsville, TX</title>
+  <meta name="description" content="Beach Glo Tanning &amp; Spa in Kingsville, TX — UV Tanning Beds, Ultra Stand-Up Tanning, Red Light Therapy, Red Light Helmet, Airbrush Spray Tans, and Student/Military Discounts. Book online today." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: '#FAF6F0',
+            linen: '#F3ECE2',
+            espresso: '#2B211C',
+            cocoa: '#5C4B42',
+            bronze: '#C27849',
+            bronzeDark: '#A56137',
+            blush: '#E8A4B4',
+            blushSoft: '#FDF1F4',
+            gold: '#C9A255',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF6F0;
+      color: #2B211C;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .menu-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .menu-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(194, 120, 73, 0.5);
+      box-shadow: 0 18px 34px -18px rgba(43, 33, 28, 0.16);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-blush/30 selection:text-espresso">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-espresso text-sand text-center text-xs py-2.5 px-4 tracking-wide">
+    <span>Student &amp; Military Monthly Specials Available &bull; 930 E Santa Gertrudis Ste. A, Kingsville, TX</span>
+  </div>
+
+  <!-- Sticky Navigation -->
+  <header class="sticky top-0 z-40 bg-sand/95 backdrop-blur-md border-b border-espresso/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="images/logo.png" alt="Beach Glo Tanning &amp; Spa Logo" class="w-12 h-12 rounded-full object-cover border border-gold/50 shadow-sm bg-white" />
+        <div>
+          <span class="block font-serif text-2xl font-semibold text-espresso leading-none">Beach Glo</span>
+          <span class="block text-[10px] tracking-[0.26em] uppercase text-bronze mt-1">Tanning &amp; Spa &bull; Kingsville</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-cocoa">
+        <a href="#services" class="hover:text-bronze transition-colors">Services &amp; Pricing</a>
+        <a href="#memberships" class="hover:text-bronze transition-colors">Monthly Packages</a>
+        <a href="#redlight" class="hover:text-bronze transition-colors">Red Light Spa</a>
+        <a href="#prep" class="hover:text-bronze transition-colors">Tan Prep &amp; Care</a>
+        <a href="#visit" class="hover:text-bronze transition-colors">Visit Us</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="tel:+13612211953" class="text-xs font-semibold tracking-wider uppercase text-cocoa hover:text-bronze px-3 py-2">
+          361-221-1953
+        </a>
+        <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="bg-bronze hover:bg-bronzeDark text-white text-xs font-semibold uppercase tracking-widest px-6 py-3 rounded-full transition-all shadow-md shadow-bronze/25">
+          Book Now
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden p-2 text-espresso border border-espresso/20 rounded-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-linen border-t border-espresso/10 px-6 py-5 space-y-4">
+      <div class="flex flex-col space-y-3 text-sm font-medium text-espresso">
+        <a href="#services" class="mobile-link hover:text-bronze">Services &amp; Pricing</a>
+        <a href="#memberships" class="mobile-link hover:text-bronze">Monthly Packages</a>
+        <a href="#redlight" class="mobile-link hover:text-bronze">Red Light Spa</a>
+        <a href="#prep" class="mobile-link hover:text-bronze">Tan Prep &amp; Aftercare</a>
+        <a href="#visit" class="mobile-link hover:text-bronze">Location &amp; Contact</a>
+      </div>
+      <div class="pt-3 border-t border-espresso/10 flex flex-col gap-3">
+        <a href="tel:+13612211953" class="text-center text-xs font-semibold uppercase tracking-widest text-espresso py-2.5 border border-espresso/20 rounded-full">Call 361-221-1953</a>
+        <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="text-center bg-bronze text-white text-xs font-semibold uppercase tracking-widest py-3 rounded-full">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="relative pt-14 pb-20 lg:pt-20 lg:pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blushSoft border border-blush/50">
+          <span class="w-2 h-2 rounded-full bg-bronze"></span>
+          <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-espresso">Kingsville's Boutique Tanning &amp; Wellness Spa</span>
+        </div>
+
+        <h1 class="font-serif text-5xl sm:text-6xl font-semibold text-espresso leading-[1.06]">
+          Effortless Glow.
+          <span class="block italic text-bronze mt-1">Year-Round Radiance.</span>
+        </h1>
+
+        <p class="text-cocoa text-base sm:text-lg leading-relaxed max-w-xl font-light">
+          From premier Passion &amp; Affinity 700 UV tanning beds and Ultra Stand-Up booths to restorative Red Light Therapy and boutique accessories—step in, unwind, and leave glowing.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="bg-bronze hover:bg-bronzeDark text-white text-xs sm:text-sm font-semibold uppercase tracking-widest px-8 py-4 rounded-full transition-all shadow-lg shadow-bronze/25">
+            Book on Square
+          </a>
+          <a href="#services" class="text-xs sm:text-sm font-semibold uppercase tracking-widest px-7 py-4 rounded-full border border-espresso/25 text-espresso hover:bg-linen transition-colors">
+            View Service Menu
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-espresso/10 max-w-lg">
+          <div>
+            <p class="font-serif text-2xl sm:text-3xl font-semibold text-espresso">3 Levels</p>
+            <p class="text-xs text-cocoa mt-0.5">UV &amp; Stand-Up Beds</p>
+          </div>
+          <div>
+            <p class="font-serif text-2xl sm:text-3xl font-semibold text-espresso">Red Light</p>
+            <p class="text-xs text-cocoa mt-0.5">Body &amp; Helmet Spa</p>
+          </div>
+          <div>
+            <p class="font-serif text-2xl sm:text-3xl font-semibold text-espresso">$30.98</p>
+            <p class="text-xs text-cocoa mt-0.5">Student / Military Mo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Real Beach Glo Neon Greenery Wall -->
+      <div class="lg:col-span-6">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-espresso">
+          <img src="images/hero-banner.jpg" alt="Beach Glo Tanning &amp; Spa Neon Sign" class="w-full h-72 sm:h-96 object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/75 via-transparent to-transparent"></div>
+          <div class="absolute bottom-5 inset-x-5 bg-sand/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-4 shadow-lg">
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">Kingsville, TX</p>
+              <p class="font-serif text-lg sm:text-xl font-semibold text-espresso">930 E Santa Gertrudis Ste. A</p>
+            </div>
+            <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="shrink-0 bg-espresso hover:bg-bronze text-sand text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-full transition-colors">
+              Reserve &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Categorized Service Menu (Synced with Square Appointments) -->
+  <section id="services" class="bg-white py-24 border-y border-espresso/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">Direct Square Booking Menu</p>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-espresso mt-2">Services &amp; Pricing</h2>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 bg-linen p-1.5 rounded-full self-start lg:self-auto">
+          <button data-filter="all" class="filter-btn px-5 py-2 text-xs font-semibold uppercase tracking-wider rounded-full bg-espresso text-sand transition-colors">All</button>
+          <button data-filter="uv" class="filter-btn px-5 py-2 text-xs font-semibold uppercase tracking-wider rounded-full text-cocoa hover:text-espresso transition-colors">UV Tanning</button>
+          <button data-filter="redlight" class="filter-btn px-5 py-2 text-xs font-semibold uppercase tracking-wider rounded-full text-cocoa hover:text-espresso transition-colors">Red Light Spa</button>
+          <button data-filter="specials" class="filter-btn px-5 py-2 text-xs font-semibold uppercase tracking-wider rounded-full text-cocoa hover:text-espresso transition-colors">Specials &amp; Patches</button>
+        </div>
+      </div>
+
+      <div id="serviceGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- UV Tanning: Passion Bed -->
+        <article data-category="uv" class="menu-card bg-sand rounded-2xl p-7 border border-espresso/10 flex flex-col justify-between reveal">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Premier Level &bull; 15 Min</span>
+              <span class="text-xs font-medium bg-white px-2.5 py-1 rounded-full text-cocoa border border-espresso/10">UV Bed</span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-espresso">Passion Tanning Bed</h3>
+            <ul class="mt-4 space-y-2 text-sm text-cocoa border-t border-espresso/10 pt-4">
+              <li class="flex justify-between"><span>1 Session</span><strong class="text-espresso">$10.33</strong></li>
+              <li class="flex justify-between"><span>10 Sessions</span><strong class="text-espresso">$61.95</strong></li>
+              <li class="flex justify-between"><span>20 Sessions</span><strong class="text-espresso">$93.60</strong></li>
+              <li class="flex justify-between"><span>1 Month Unlimited</span><strong class="text-espresso">$41.30</strong></li>
+              <li class="flex justify-between text-bronze font-medium"><span>1 Month Student / Military</span><strong>$30.98</strong></li>
+            </ul>
+          </div>
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="mt-6 text-center bg-espresso hover:bg-bronze text-sand text-xs font-semibold uppercase tracking-widest py-3 rounded-full transition-colors">
+            Book Passion Bed
+          </a>
+        </article>
+
+        <!-- UV Tanning: Affinity 700 -->
+        <article data-category="uv" class="menu-card bg-sand rounded-2xl p-7 border border-espresso/10 flex flex-col justify-between reveal">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">High-Intensity &bull; 12 Min</span>
+              <span class="text-xs font-medium bg-white px-2.5 py-1 rounded-full text-cocoa border border-espresso/10">UV Bed</span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-espresso">Affinity 700 Tanning Bed</h3>
+            <ul class="mt-4 space-y-2 text-sm text-cocoa border-t border-espresso/10 pt-4">
+              <li class="flex justify-between"><span>1 Session</span><strong class="text-espresso">$15.49</strong></li>
+              <li class="flex justify-between"><span>10 Sessions</span><strong class="text-espresso">$103.25</strong></li>
+              <li class="flex justify-between"><span>20 Sessions</span><strong class="text-espresso">$154.88</strong></li>
+              <li class="flex justify-between"><span>1 Month Unlimited</span><strong class="text-espresso">$67.11</strong></li>
+            </ul>
+          </div>
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="mt-6 text-center bg-espresso hover:bg-bronze text-sand text-xs font-semibold uppercase tracking-widest py-3 rounded-full transition-colors">
+            Book Affinity 700
+          </a>
+        </article>
+
+        <!-- UV Tanning: Ultra Level Standup -->
+        <article data-category="uv" class="menu-card bg-sand rounded-2xl p-7 border border-gold/40 flex flex-col justify-between reveal relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Ultra Level &bull; 9 Min</span>
+              <span class="text-xs font-semibold bg-blushSoft px-2.5 py-1 rounded-full text-espresso border border-blush/40">Stand-Up</span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-espresso">Sunrise 480 Stand-Up</h3>
+            <ul class="mt-4 space-y-2 text-sm text-cocoa border-t border-espresso/10 pt-4">
+              <li class="flex justify-between"><span>1 Session</span><strong class="text-espresso">$20.00</strong></li>
+              <li class="flex justify-between"><span>10 Sessions</span><strong class="text-espresso">$114.50</strong></li>
+              <li class="flex justify-between"><span>20 Sessions</span><strong class="text-espresso">$200.00</strong></li>
+              <li class="flex justify-between"><span>1 Month Unlimited</span><strong class="text-espresso">$78.00</strong></li>
+            </ul>
+          </div>
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="mt-6 text-center bg-bronze hover:bg-bronzeDark text-white text-xs font-semibold uppercase tracking-widest py-3 rounded-full transition-colors">
+            Book Stand-Up Booth
+          </a>
+        </article>
+
+        <!-- Red Light Therapy -->
+        <article data-category="redlight" class="menu-card bg-sand rounded-2xl p-7 border border-espresso/10 flex flex-col justify-between reveal">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Skin &amp; Wellness &bull; 25 Min</span>
+              <span class="text-xs font-medium bg-white px-2.5 py-1 rounded-full text-cocoa border border-espresso/10">Spa</span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-espresso">Red Light Therapy</h3>
+            <p class="text-xs text-cocoa mt-2 leading-relaxed">Full-body red light sessions to support skin rejuvenation, collagen production, and relaxation.</p>
+            <ul class="mt-4 space-y-2 text-sm text-cocoa border-t border-espresso/10 pt-4">
+              <li class="flex justify-between"><span>Single Session (25 min)</span><strong class="text-espresso">$20.65</strong></li>
+              <li class="flex justify-between"><span>1 Month Red Light Plan</span><strong class="text-espresso">$90.00</strong></li>
+            </ul>
+          </div>
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="mt-6 text-center bg-espresso hover:bg-bronze text-sand text-xs font-semibold uppercase tracking-widest py-3 rounded-full transition-colors">
+            Book Red Light
+          </a>
+        </article>
+
+        <!-- Red Light Helmet -->
+        <article data-category="redlight" class="menu-card bg-sand rounded-2xl p-7 border border-espresso/10 flex flex-col justify-between reveal">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Targeted Care &bull; 15–30 Min</span>
+              <span class="text-xs font-medium bg-white px-2.5 py-1 rounded-full text-cocoa border border-espresso/10">Spa</span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-espresso">Red Light Helmet</h3>
+            <p class="text-xs text-cocoa mt-2 leading-relaxed">Targeted red light therapy helmet sessions designed for scalp wellness and hair vitality.</p>
+            <ul class="mt-4 space-y-2 text-sm text-cocoa border-t border-espresso/10 pt-4">
+              <li class="flex justify-between"><span>Single Session (15 min)</span><strong class="text-espresso">$25.00</strong></li>
+              <li class="flex justify-between"><span>Red Light Helmet Package (30 min)</span><strong class="text-espresso">$85.00</strong></li>
+            </ul>
+          </div>
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="mt-6 text-center bg-espresso hover:bg-bronze text-sand text-xs font-semibold uppercase tracking-widest py-3 rounded-full transition-colors">
+            Book Red Light Helmet
+          </a>
+        </article>
+
+        <!-- Seasonal Specials & Boutique Add-Ons -->
+        <article data-category="specials" class="menu-card bg-blushSoft rounded-2xl p-7 border border-blush/50 flex flex-col justify-between reveal">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-bronze">Featured &amp; Boutique</span>
+              <span class="text-xs font-medium bg-white px-2.5 py-1 rounded-full text-espresso border border-blush/40">Specials</span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-espresso">Specials &amp; Custom Patches</h3>
+            <ul class="mt-4 space-y-2 text-sm text-cocoa border-t border-espresso/10 pt-4">
+              <li class="flex justify-between"><span>Beach Glo All-Beds Package</span><strong class="text-espresso">Price Varies</strong></li>
+              <li class="flex justify-between"><span>Passion Spring Break Special</span><strong class="text-espresso">$30.00</strong></li>
+              <li class="flex justify-between"><span>Affinity Spring Break Special</span><strong class="text-espresso">$55.00</strong></li>
+              <li class="flex justify-between"><span>Stand-Up Spring Break Special</span><strong class="text-espresso">$65.00</strong></li>
+              <li class="flex justify-between"><span>Letter / Designer Patches</span><strong class="text-espresso">$1.50 – $2.50</strong></li>
+            </ul>
+          </div>
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="mt-6 text-center bg-bronze hover:bg-bronzeDark text-white text-xs font-semibold uppercase tracking-widest py-3 rounded-full transition-colors">
+            View All on Square
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monthly Packages & Student/Military Spotlight -->
+  <section id="memberships" class="bg-linen py-24">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="bg-espresso text-sand rounded-3xl p-8 sm:p-14 grid lg:grid-cols-12 gap-8 items-center shadow-xl reveal">
+        <div class="lg:col-span-8 space-y-4">
+          <span class="inline-block text-xs font-semibold uppercase tracking-[0.24em] text-blush">Best Value for Regulars</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold leading-tight">
+            Monthly Tanning &amp; Student / Military Rates
+          </h2>
+          <p class="text-sand/80 text-sm sm:text-base leading-relaxed max-w-2xl font-light">
+            Save more with our 1-Month Unlimited packages across Passion ($41.30), Affinity 700 ($67.11), and Ultra Stand-Up ($78.00)—plus special Student &amp; Military pricing starting at just <strong class="text-white">$30.98/month</strong>. And whenever we close for holidays, active monthly members never lose days!
+          </p>
+        </div>
+        <div class="lg:col-span-4 flex lg:justify-end">
+          <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center bg-bronze hover:bg-bronzeDark text-white text-xs sm:text-sm font-semibold uppercase tracking-widest px-8 py-4 rounded-full transition-colors shadow-lg">
+            Claim Your Package
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Red Light Spa & Interactive Tan Prep / Aftercare Guide -->
+  <section id="redlight" class="bg-sand py-24">
+    <div id="prep" class="max-w-4xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-10 reveal">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">Get Your Best Glow</p>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-espresso mt-2">Tan Prep &amp; Aftercare Guide</h2>
+        <p class="text-sm sm:text-base text-cocoa mt-3 max-w-xl mx-auto">
+          Quick tips to help your color develop evenly and last longer after every session at Beach Glo.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-espresso/10 shadow-sm reveal">
+        <div class="flex justify-center gap-3 mb-8">
+          <button id="tabBefore" class="prep-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-espresso text-sand transition-colors">Before Your Session</button>
+          <button id="tabAfter" class="prep-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-linen text-cocoa hover:text-espresso transition-colors">Aftercare Tips</button>
+        </div>
+
+        <div id="panelBefore" class="grid sm:grid-cols-2 gap-5 text-sm text-cocoa">
+          <div class="p-5 rounded-2xl bg-sand border border-espresso/5">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">1. Exfoliate Gently</h3>
+            <p class="leading-relaxed">Exfoliate the night before your appointment so your tan develops smoothly and evenly.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-sand border border-espresso/5">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">2. Arrive With Clean Skin</h3>
+            <p class="leading-relaxed">Skip heavy oils, perfumes, or makeup prior to stepping into the bed or Red Light booth.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-sand border border-espresso/5">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">3. Use Indoor Tanning Lotion</h3>
+            <p class="leading-relaxed">Hydrated skin tans faster and deeper. Ask our team in-salon for lotion recommendations.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-sand border border-espresso/5">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">4. Bring Eye Protection</h3>
+            <p class="leading-relaxed">Always wear protective eyewear during UV sessions—we have options available at the front desk.</p>
+          </div>
+        </div>
+
+        <div id="panelAfter" class="hidden grid sm:grid-cols-2 gap-5 text-sm text-cocoa">
+          <div class="p-5 rounded-2xl bg-blushSoft/60 border border-blush/30">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">1. Moisturize Daily</h3>
+            <p class="leading-relaxed">Lock in your glow with a rich, tan-extending moisturizer morning and night.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-blushSoft/60 border border-blush/30">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">2. Stay Hydrated</h3>
+            <p class="leading-relaxed">Drinking plenty of water keeps skin supple and extends the life of your bronze color.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-blushSoft/60 border border-blush/30">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">3. Wait Before Showering</h3>
+            <p class="leading-relaxed">Give bronzing lotions time to settle—wait a few hours before showering for best results.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-blushSoft/60 border border-blush/30">
+            <h3 class="font-serif text-xl font-semibold text-espresso mb-1.5">4. Pair With Red Light</h3>
+            <p class="leading-relaxed">Alternate UV sessions with Red Light Therapy to keep skin looking smooth and refreshed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Us / Footer -->
+  <footer id="visit" class="bg-espresso text-sand pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-sand/15">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="images/logo.png" alt="Beach Glo Tanning &amp; Spa" class="w-12 h-12 rounded-full bg-white border border-gold/50" />
+          <div>
+            <span class="block font-serif text-2xl font-semibold leading-none">Beach Glo</span>
+            <span class="block text-[10px] tracking-[0.24em] uppercase text-blush mt-1">Tanning &amp; Spa</span>
+          </div>
+        </div>
+        <p class="text-xs text-sand/70 leading-relaxed">
+          Your local Kingsville destination for UV tanning, Red Light Therapy, seasonal specials, and boutique gifts.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xs font-semibold uppercase tracking-[0.22em] text-blush">Location</h3>
+        <p class="text-sm text-sand/85 leading-relaxed">
+          930 E Santa Gertrudis Ste. A<br />
+          Kingsville, TX 78363
+        </p>
+        <a href="https://maps.google.com/?q=930+E+Santa+Gertrudis+Ste+A+Kingsville+TX+78363" target="_blank" rel="noopener noreferrer" class="inline-block text-xs text-blush underline hover:text-white">
+          Get Directions &rarr;
+        </a>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xs font-semibold uppercase tracking-[0.22em] text-blush">Contact</h3>
+        <ul class="space-y-2 text-sm text-sand/85">
+          <li><a href="tel:+13612211953" class="hover:text-blush transition-colors">Phone: (361) 221-1953</a></li>
+          <li><a href="mailto:beachglotanning@hotmail.com" class="hover:text-blush transition-colors">beachglotanning@hotmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xs font-semibold uppercase tracking-[0.22em] text-blush">Quick Links</h3>
+        <ul class="space-y-2 text-sm text-sand/85">
+          <li><a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="hover:text-blush transition-colors">Book on Square Appointments</a></li>
+          <li><a href="https://www.facebook.com/people/Beach-Glo-Tanning-Spa/100090217755318/" target="_blank" rel="noopener noreferrer" class="hover:text-blush transition-colors">Follow Us on Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sand/55">
+      <p>&copy; 2026 Beach Glo Tanning &amp; Spa. All rights reserved.</p>
+      <p>Kingsville, Texas</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Book Bar -->
+  <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-sand/95 backdrop-blur-md border-t border-espresso/15 px-4 py-3 flex items-center gap-3">
+    <a href="tel:+13612211953" class="flex-1 text-center border border-espresso/25 text-espresso text-xs font-semibold uppercase tracking-wider py-3 rounded-full">Call</a>
+    <a href="https://book.squareup.com/appointments/in34upv047f14e/location/LMX5ZQ27RTW5H/services" target="_blank" rel="noopener noreferrer" class="flex-[2] text-center bg-bronze text-white text-xs font-semibold uppercase tracking-widest py-3 rounded-full shadow-md">Book Now</a>
+  </div>
+
+  <script>
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Service Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.menu-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-espresso', 'text-sand');
+          b.classList.add('text-cocoa');
+        });
+        btn.classList.add('bg-espresso', 'text-sand');
+        btn.classList.remove('text-cocoa');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Prep vs Aftercare Tabs
+    const tabBefore = document.getElementById('tabBefore');
+    const tabAfter = document.getElementById('tabAfter');
+    const panelBefore = document.getElementById('panelBefore');
+    const panelAfter = document.getElementById('panelAfter');
+
+    tabBefore.addEventListener('click', () => {
+      tabBefore.className = 'prep-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-espresso text-sand transition-colors';
+      tabAfter.className = 'prep-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-linen text-cocoa hover:text-espresso transition-colors';
+      panelBefore.classList.remove('hidden');
+      panelAfter.classList.add('hidden');
+    });
+
+    tabAfter.addEventListener('click', () => {
+      tabAfter.className = 'prep-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-espresso text-sand transition-colors';
+      tabBefore.className = 'prep-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-linen text-cocoa hover:text-espresso transition-colors';
+      panelAfter.classList.remove('hidden');
+      panelBefore.classList.add('hidden');
+    });
+
+    // Scroll Reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
